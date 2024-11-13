@@ -58,24 +58,12 @@ function RootLayoutNav() {
   const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation();
 
-  onAuthStateChanged(auth, (user) => {
-    console.log("User", user);
-    setIsLoading(false);
-    if (user) {
-      console.log("No user, redirecting to login");
-      // navigation.replace("/index");
-      router.replace("./(tabs)");
-    }
-  });
-
-  if (isLoading) return <Text style={{ paddingTop: 30 }}>Loading...</Text>;
   // Need to add the firebase auth state listener here
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
       </Stack>
     </ThemeProvider>

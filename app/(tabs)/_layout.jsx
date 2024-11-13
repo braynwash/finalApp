@@ -53,13 +53,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
-
-      <Tabs.Screen
-        name="pic"
-        options={{
-          title: "Take Picture",
-        }}
-      />
     </Tabs>
   );
 }
