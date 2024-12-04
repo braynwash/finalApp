@@ -53,6 +53,18 @@ export default function RootLayout() {
   return <RootLayoutNav />;
 }
 
+onAuthStateChanged(auth, (user) => {
+  console.log("User: ");
+  setIsLoading(false);
+  if (user) {
+  } else {
+    router.replace("./(tabs)");
+  }
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+});
+
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const [isLoading, setIsLoading] = useState(true);

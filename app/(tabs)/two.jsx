@@ -3,7 +3,7 @@ import { Button, TextInput } from "react-native-paper";
 import { Text, View } from "@/components/Themed";
 import React, { useState, useEffect } from "react";
 import { db } from "@/FirebaseConfig";
-import { collection, addDoc, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, getDocs, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 
 export default function TabTwoScreen() {
   const [userName, setUserName] = useState("");
@@ -52,6 +52,16 @@ export default function TabTwoScreen() {
     }
   };
 
+  const deleteUser = async (id) => {
+    console.log("Delete button pressed for item ID:", id);
+    try {
+      await deleteDoc(doc(db, "ReactUser", id));
+      console.log("Document deleted successfully");
+    } catch (error) {
+      console.error("Error deleting document:", error.message);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View>
@@ -80,7 +90,7 @@ export default function TabTwoScreen() {
         renderItem={({ item }) => (
           <View>
             <Text>{item.name}</Text>
-            <Button style={styles.btn} mode="outlined">
+            <Button style={styles.btn} mode="outlined" onPress={() => deleteUser(item.id)}>
               Delete
             </Button>
           </View>
