@@ -1,19 +1,14 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
-
-export default {
+const Colors = {
   light: {
     text: '#000',
-    background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
+    tint: '#FFF', // This is likely causing the issue
+    background: '#FFF',
   },
   dark: {
-    text: '#fff',
+    text: '#FFF',
+    tint: '#000', // Adjust this if needed for the dark mode
     background: '#000',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
   },
 };
+
+export default Colors;

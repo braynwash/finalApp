@@ -16,5 +16,5 @@
     "FirebaseConfig.js",
     "app/(tabs)/index.jsx",
     "app/_layout.jsx"
-, "app/(tabs)/two.jsx", "app/(tabs)/_layout.jsx"  ]
+, "app/(tabs)/list.jsx", "app/(tabs)/_layout.jsx"  ]
 }
