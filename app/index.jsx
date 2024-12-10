@@ -34,25 +34,27 @@ export default function index() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Sign In or Create Account</Text>
+      <Text style={styles.header}>Sign In or Create An Account</Text>
       <TextInput
         autoCapitalize="none"
         value={email}
         keyboardType="email-address"
         placeholder="Email Address..."
         onChangeText={(text) => setEmail(text)}
+        style={styles.input}
       />
       <TextInput
         value={password}
         secureTextEntry={true}
         placeholder="Password..."
         onChangeText={(text) => setPassword(text)}
+        style={styles.input}
       />
-      <Button mode="outlined" onPress={signUp}>
-        <Text>Sign Up</Text>
+      <Button style={styles.button} mode="text" onPress={signUp}>
+        <Text style={styles.black}>Sign Up</Text>
       </Button>
-      <Button mode="outlined" onPress={signIn}>
-        <Text>Sign In</Text>
+      <Button style={styles.button} mode="text" onPress={signIn}>
+        <Text style={styles.black}>Sign In</Text>
       </Button>
     </SafeAreaView>
   );
@@ -62,7 +64,27 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+    backgroundColor: "#FFF",
     justifyContent: "center",
   },
+  button: {
+      padding: 5,
+      borderRadius: 50,
+      marginTop: 20,
+      backgroundColor: "#FB2943",
+  },
+  input: {
+    marginTop: 5,
+    marginBottom: 15,
+    backgroundColor: "#fee6e9"
+  },
+  header: {
+    color: "#FB2943",
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom: 8,
+  },
+  black: {
+    color: "#000"
+  }
 });
