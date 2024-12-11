@@ -64,23 +64,20 @@ export default function TabTwoScreen() {
 
   return (
     <View style={styles.container}>
-      <View>
-        <Text style={styles.title}>Tab Two</Text>
-      </View>
-
-      <View>
+      <View style={styles.formContain}>
         <Text style={styles.title}>Add your name to mailing list</Text>
         <TextInput
           autoCapitalize="none"
           value={userName}
           placeholder="Add Persons Name"
           onChangeText={(text) => setUserName(text)}
+          style={styles.input}
         />
-        <Button mode="contained" onPress={addUser}>
-          Add Person
+        <Button style={styles.button} mode="contained" onPress={addUser}>
+          <Text style={styles.red}>Add Person</Text>
         </Button>
-        <Button mode="contained" onPress={showNames}>
-          Show Names
+        <Button style={styles.button} mode="contained" onPress={showNames}>
+          <Text style={styles.red}>Show Names</Text>
         </Button>
       </View>
       {/* Need to add a delete button to delete the name from the list */}
@@ -88,10 +85,10 @@ export default function TabTwoScreen() {
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View>
-            <Text>{item.name}</Text>
-            <Button style={styles.btn} mode="outlined" onPress={() => deleteUser(item.id)}>
-              Delete
+          <View style={styles.inputContain}>
+            <Text style={styles.text}>{item.name}</Text>
+            <Button style={styles.inputBtn} mode="outlined" onPress={() => deleteUser(item.id)}>
+              <Text style={styles.white}>Delete</Text>
             </Button>
           </View>
         )}
@@ -103,20 +100,54 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#FB2943"
+  },
+  formContain: {
+    width: "80%",
+    marginTop: "70%",
+    backgroundColor: "#FB2943",
+  },
+  red: {
+    color: "#FB2943"
+  },
+  white: {
+    color: "#FFF"
   },
   title: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "bold",
     textAlign: "center",
+    color: "#FFF",
+    marginBottom: 20
   },
   separator: {
     marginVertical: 30,
     height: 1,
     width: "80%",
   },
-  btn: {
-    marginTop: 10,
+  button: {
+    backgroundColor: "#FFF",
+    marginTop: 20
   },
+  text: {
+    fontSize: 15,
+    textAlign: "center"
+  },
+  input: {
+    backgroundColor: "#fee6e9"
+  },
+  inputContain: {
+    backgroundColor: "#FFF",
+    width: "80%",
+    marginTop: 25,
+    textAlign: "center",
+    marginLeft: 35,
+    padding: 10
+  },
+  inputBtn: {
+    marginTop: 10,
+    backgroundColor: "#FB2943",
+  }
 });
