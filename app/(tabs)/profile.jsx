@@ -63,6 +63,7 @@ export default function profile() {
       width: "80%",
       marginBottom: 20,
       marginTop: 15,
+      backgroundColor: "#FFF"
     },
     white: {
       color: "#FFF"

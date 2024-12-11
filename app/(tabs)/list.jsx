@@ -133,18 +133,18 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 15,
-    textAlign: "center"
+    textAlign: "center",
+    color: "#FB2943"
   },
   input: {
     backgroundColor: "#fee6e9"
   },
   inputContain: {
     backgroundColor: "#FFF",
-    width: "80%",
+    width: 200,
     marginTop: 25,
     textAlign: "center",
-    marginLeft: 35,
-    padding: 10
+    padding: 15
   },
   inputBtn: {
     marginTop: 10,
